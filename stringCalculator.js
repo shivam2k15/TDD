@@ -12,7 +12,12 @@ const stringCalculator = (str) => {
       `negative numbers not allowed ${negativeIntegers.join(",")}`
     );
   }
-  return integers.map(Number).reduce((init, item) => init + item, 0);
+  return integers.map(Number).reduce((init, item) => {
+    if (item < 1001) {
+      return init + item;
+    }
+    return init;
+  }, 0);
 };
 
 module.exports = stringCalculator;

@@ -24,7 +24,7 @@ describe("Testing String Calculator", () => {
     expect(stringCalculator("//;\n1;2")).toBe(3);
   });
 
-  test("Testing with input string with a negative number that throws an exception", () => {
+  test("Testing with input string with negative numbers that throws an exception", () => {
     expect(() => stringCalculator("//;\n1;-1;-6;-8")).toThrow(
       "negative numbers not allowed -1,-6,-8"
     );

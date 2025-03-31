@@ -5,10 +5,14 @@ const stringCalculator = (str) => {
     str = str.slice(3);
   }
   str = str.replace(/\n/g, delimiters);
-  return str
-    .split(delimiters)
-    .map(Number)
-    .reduce((init, item) => init + item, 0);
+  let integers = str.split(delimiters);
+  let negativeIntegers = integers.filter((num) => num[0] == "-");
+  if (negativeIntegers.length > 0) {
+    throw new Error(
+      `negative numbers not allowed ${negativeIntegers.join(",")}`
+    );
+  }
+  return integers.map(Number).reduce((init, item) => init + item, 0);
 };
 
 module.exports = stringCalculator;

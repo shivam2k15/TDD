@@ -1,4 +1,5 @@
 const stringCalculator = (str) => {
+str=str.replace(/\n/g,",");
   return str
     .split(",")
     .map(Number)

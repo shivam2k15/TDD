@@ -1,0 +1,14 @@
+{
+  "name": "TDD",
+  "version": "1.0.0",
+  "description": "Test Driven Development",
+  "main": "stringCalculator.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Shivam",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

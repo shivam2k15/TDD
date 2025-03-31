@@ -15,4 +15,9 @@ describe("Testing String Calculator", () => {
   test("Testing with input string that handles new lines between numbers", () => {
     expect(stringCalculator("1\n2,3")).toBe(6);
   });
+  
+  test("Testing with input string that supports different delimiters", () => {
+    expect(stringCalculator("//;\n1;2")).toBe(3);
+  });
+
 });

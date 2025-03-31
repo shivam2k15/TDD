@@ -33,4 +33,8 @@ describe("Testing String Calculator", () => {
   test("Testing with input string numbers bigger than 1000 should be ignored", () => {
     expect(stringCalculator("//;\n1;2;1001")).toBe(3);
   });
+
+  test("Testing with input string if delimiters can be of any length", () => {
+    expect(stringCalculator("//[***]\n1***2***3***1001")).toBe(6);
+  });
 });

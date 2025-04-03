@@ -7,7 +7,6 @@ describe("Testing String Calculator", () => {
     expect(stringCalculator("1,5")).toBe(6);
   });
 
-  
   test("Testing with input string of any length", () => {
     expect(
       stringCalculator(
@@ -15,11 +14,11 @@ describe("Testing String Calculator", () => {
       )
     ).toBe(10667);
   });
-  
+
   test("Testing with input string that handles new lines between numbers", () => {
     expect(stringCalculator("1\n2,3")).toBe(6);
   });
-  
+
   test("Testing with input string that supports different delimiters", () => {
     expect(stringCalculator("//;\n1;2")).toBe(3);
   });
@@ -30,6 +29,12 @@ describe("Testing String Calculator", () => {
     );
   });
   
+  test("Testing with input string with aphabates numbers that throws an exception", () => {
+    expect(() => stringCalculator("1,a,4,b,5")).toThrow(
+      "alphabates are not allowed a,b"
+    );
+  });
+
   test("Testing with input string numbers bigger than 1000 should be ignored", () => {
     expect(stringCalculator("//;\n1;2;1001")).toBe(3);
   });
@@ -37,4 +42,5 @@ describe("Testing String Calculator", () => {
   test("Testing with input string if delimiters can be of any length", () => {
     expect(stringCalculator("//[***]\n1***2***3***1001")).toBe(6);
   });
+
 });

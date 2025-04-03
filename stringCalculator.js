@@ -24,7 +24,13 @@ const stringCalculator = (str) => {
   }
   str = str.replace(/\n/g, delimiters);
   let integers = str.split(delimiters);
+  let alphabates = integers.filter((num) => isNaN(Number(num)));
+
   let negativeIntegers = integers.filter((num) => num[0] == "-");
+  if (alphabates.length > 0) {
+    throw new Error(`alphabates are not allowed ${alphabates.join(",")}`);
+  }
+
   if (negativeIntegers.length > 0) {
     throw new Error(
       `negative numbers not allowed ${negativeIntegers.join(",")}`
